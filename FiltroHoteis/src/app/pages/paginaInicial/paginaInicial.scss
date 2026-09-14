@@ -403,3 +403,177 @@
 
   cursor: not-allowed;
 }
+
+
+
+/* =========================
+   HÓSPEDES
+   ========================= */
+
+.hospedes-container {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: 380px;
+
+  padding: 20px;
+
+  background: white;
+
+  border-radius: 8px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.20);
+
+  z-index: 2000;
+}
+
+
+.quarto header {
+  margin-bottom: 20px;
+}
+
+
+.quarto header h4 {
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #272727;
+}
+
+
+.hospede-linha {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 0;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+
+.hospede-descricao {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.hospede-descricao span {
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #272727;
+}
+
+
+.hospede-descricao small {
+  font-size: 11px;
+
+  color: #777;
+}
+
+
+/* =========================
+   CONTADOR
+   ========================= */
+
+.contador {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.contador button {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d0d0d0;
+
+  border-radius: 50%;
+
+  background: white;
+
+  font-size: 20px;
+  line-height: 1;
+
+  color: #272727;
+
+  cursor: pointer;
+}
+
+
+.contador button:hover:not(:disabled) {
+  background-color: #f2f2f2;
+}
+
+
+.contador button:disabled {
+  color: #bcbcbc;
+
+  border-color: #e0e0e0;
+
+  cursor: not-allowed;
+}
+
+
+.contador span {
+  min-width: 20px;
+
+  text-align: center;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: #272727;
+}
+
+
+/* =========================
+   RODAPÉ
+   ========================= */
+
+.hospedes-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 20px;
+}
+
+
+.hospedes-footer button {
+  padding: 10px 24px;
+
+  border: none;
+
+  border-radius: 20px;
+
+  background-color: #0540d3;
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.hospedes-footer button:hover {
+  background-color: #0435ae;
+}

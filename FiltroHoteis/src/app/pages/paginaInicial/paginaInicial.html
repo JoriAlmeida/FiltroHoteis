@@ -60,7 +60,10 @@
 
       <div class="campo-busca calendario-campo">
 
-        <div class="campo-conteudo">
+        <div
+          class="campo-conteudo"
+          (click)="abrirCalendario()"
+        >
 
           <label>Quando?</label>
 
@@ -68,7 +71,6 @@
             type="text"
             [value]="dataEntrada ? textoDatas() : ''"
             [placeholder]="dataSelecionada ? 'Selecione as datas...' : ''"
-            (click)="abrirCalendario()"
             readonly
           >
 
@@ -85,10 +87,7 @@
 
           <div class="calendarios">
 
-
-            <!-- =========================
-                 MÊS ATUAL
-                 ========================= -->
+            <!-- MÊS ATUAL -->
 
             <div class="calendar">
 
@@ -100,9 +99,7 @@
 
               </header>
 
-
               <div class="days-of-week">
-
                 <div>Dom</div>
                 <div>Seg</div>
                 <div>Ter</div>
@@ -110,9 +107,7 @@
                 <div>Qui</div>
                 <div>Sex</div>
                 <div>Sáb</div>
-
               </div>
-
 
               <div class="days">
 
@@ -144,9 +139,7 @@
             </div>
 
 
-            <!-- =========================
-                 MÊS SEGUINTE
-                 ========================= -->
+            <!-- MÊS SEGUINTE -->
 
             <div class="calendar">
 
@@ -166,9 +159,7 @@
 
               </header>
 
-
               <div class="days-of-week">
-
                 <div>Dom</div>
                 <div>Seg</div>
                 <div>Ter</div>
@@ -176,9 +167,7 @@
                 <div>Qui</div>
                 <div>Sex</div>
                 <div>Sáb</div>
-
               </div>
-
 
               <div class="days">
 
@@ -217,6 +206,7 @@
           <div class="calendario-footer">
 
             <span>
+
               <ng-container *ngIf="!dataEntrada">
                 Selecione a data de entrada
               </ng-container>
@@ -228,6 +218,7 @@
               <ng-container *ngIf="dataEntrada && dataSaida">
                 {{ textoDatas() }}
               </ng-container>
+
             </span>
 
             <button
@@ -249,17 +240,137 @@
            HÓSPEDES
            ========================= -->
 
-      <div class="campo-busca">
+      <div class="campo-busca hospedes-campo">
 
-        <div class="campo-conteudo">
+        <div
+          class="campo-conteudo"
+          (click)="abrirHospedes()"
+        >
 
           <label>Hóspedes</label>
 
           <input
             type="text"
-            placeholder="2 adultos · 1 quarto"
+            [value]="textoHospedes()"
             readonly
           >
+
+        </div>
+
+
+        <!-- PAINEL DE HÓSPEDES -->
+
+        <div
+          class="hospedes-container"
+          *ngIf="hospedesAberto"
+          (click)="$event.stopPropagation()"
+        >
+
+          <div class="quarto">
+
+            <header>
+              <h4>Quarto 1</h4>
+            </header>
+
+
+            <!-- ADULTOS -->
+
+            <div class="hospede-linha">
+
+              <div class="hospede-descricao">
+
+                <span>Adultos</span>
+
+                <small>
+                  Acima de 18 anos
+                </small>
+
+              </div>
+
+
+              <div class="contador">
+
+                <button
+                  type="button"
+                  (click)="diminuirAdultos()"
+                  [disabled]="adultos <= minimoAdultos"
+                >
+                  −
+                </button>
+
+                <span>
+                  {{ adultos }}
+                </span>
+
+                <button
+                  type="button"
+                  (click)="aumentarAdultos()"
+                  [disabled]="adultos >= maximoAdultos"
+                >
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- CRIANÇAS -->
+
+            <div class="hospede-linha">
+
+              <div class="hospede-descricao">
+
+                <span>Crianças</span>
+
+                <small>
+                  Até 10 anos
+                </small>
+
+              </div>
+
+
+              <div class="contador">
+
+                <button
+                  type="button"
+                  (click)="diminuirCriancas()"
+                  [disabled]="criancas <= minimoCriancas"
+                >
+                  −
+                </button>
+
+                <span>
+                  {{ criancas }}
+                </span>
+
+                <button
+                  type="button"
+                  (click)="aumentarCriancas()"
+                  [disabled]="criancas >= maximoCriancas"
+                >
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- APLICAR -->
+
+            <div class="hospedes-footer">
+
+              <button
+                type="button"
+                (click)="fecharHospedes()"
+              >
+                Aplicar
+              </button>
+
+            </div>
+
+          </div>
 
         </div>
 

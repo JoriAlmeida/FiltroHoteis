@@ -26,6 +26,7 @@ export class PaginaInicial implements OnInit {
   destinoSelecionado = false;
   dataSelecionada = false;
   calendarioAberto = false;
+  hospedesAberto = false;
 
 
   // =========================================
@@ -50,6 +51,20 @@ export class PaginaInicial implements OnInit {
 
   dataEntrada: Date | null = null;
   dataSaida: Date | null = null;
+
+
+  // =========================================
+  // HÓSPEDES
+  // =========================================
+
+  adultos = 2;
+  criancas = 0;
+
+  readonly minimoAdultos = 1;
+  readonly maximoAdultos = 10;
+
+  readonly minimoCriancas = 0;
+  readonly maximoCriancas = 10;
 
 
   // =========================================
@@ -184,8 +199,8 @@ export class PaginaInicial implements OnInit {
   abrirCalendario(): void {
 
     this.calendarioAberto = true;
-
     this.dataSelecionada = true;
+    this.hospedesAberto = false;
 
     this.gerarCalendarios();
 
@@ -195,7 +210,6 @@ export class PaginaInicial implements OnInit {
   fecharCalendario(): void {
 
     this.calendarioAberto = false;
-
     this.dataSelecionada = false;
 
   }
@@ -245,7 +259,6 @@ export class PaginaInicial implements OnInit {
     const dias: DiaCalendario[] = [];
 
 
-    // Dias vazios antes do primeiro dia do mês
     for (
       let i = 0;
       i < primeiroDia.getDay();
@@ -261,7 +274,6 @@ export class PaginaInicial implements OnInit {
     }
 
 
-    // Dias do mês
     for (
       let dia = 1;
       dia <= ultimoDia.getDate();
@@ -382,7 +394,6 @@ export class PaginaInicial implements OnInit {
     data: Date
   ): void {
 
-    // Não permite selecionar data passada
     if (
       this.dataEstaNoPassado(data)
     ) {
@@ -392,7 +403,6 @@ export class PaginaInicial implements OnInit {
     }
 
 
-    // Primeira seleção
     if (
       !this.dataEntrada ||
       this.dataSaida
@@ -407,8 +417,6 @@ export class PaginaInicial implements OnInit {
     }
 
 
-    // Caso selecione uma data
-    // anterior à entrada
     if (
       data < this.dataEntrada
     ) {
@@ -420,7 +428,6 @@ export class PaginaInicial implements OnInit {
     }
 
 
-    // Segunda seleção
     this.dataSaida = data;
 
   }
@@ -558,6 +565,92 @@ export class PaginaInicial implements OnInit {
     return data.toLocaleDateString(
       'pt-BR'
     );
+
+  }
+
+
+  // =========================================
+  // HÓSPEDES
+  // =========================================
+
+  abrirHospedes(): void {
+
+    this.hospedesAberto = true;
+    this.calendarioAberto = false;
+    this.dataSelecionada = false;
+
+  }
+
+
+  fecharHospedes(): void {
+
+    this.hospedesAberto = false;
+
+  }
+
+
+  aumentarAdultos(): void {
+
+    if (
+      this.adultos < this.maximoAdultos
+    ) {
+
+      this.adultos++;
+
+    }
+
+  }
+
+
+  diminuirAdultos(): void {
+
+    if (
+      this.adultos > this.minimoAdultos
+    ) {
+
+      this.adultos--;
+
+    }
+
+  }
+
+
+  aumentarCriancas(): void {
+
+    if (
+      this.criancas < this.maximoCriancas
+    ) {
+
+      this.criancas++;
+
+    }
+
+  }
+
+
+  diminuirCriancas(): void {
+
+    if (
+      this.criancas > this.minimoCriancas
+    ) {
+
+      this.criancas--;
+
+    }
+
+  }
+
+
+  textoHospedes(): string {
+
+    if (this.criancas === 0) {
+
+      return `${this.adultos} adultos · 1 quarto`;
+
+    }
+
+
+    return `${this.adultos} adultos · ${this.criancas} crianças · 1 quarto`;
 
   }
 
