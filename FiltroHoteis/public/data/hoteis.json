@@ -1,0 +1,212 @@
+[
+  {
+    "ID": 1,
+    "NOME": "VILLAGE ARRAIAL BY MN HOTÉIS",
+    "CATEGORIA": "Porto Seguro",
+    "TIPO": "Econômico",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Muito bom",
+    "VALOR": 289.90
+  },
+  {
+    "ID": 2,
+    "NOME": "POUSADA RECANTO TRANCOSO",
+    "CATEGORIA": "Porto Seguro",
+    "TIPO": "Econômico",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Muito bom",
+    "VALOR": 319.90
+  },
+  {
+    "ID": 3,
+    "NOME": "Porto Seguro Praia Resort All Inclusive",
+    "CATEGORIA": "Porto Seguro",
+    "TIPO": "Resort",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Excelente",
+    "VALOR": 899.90
+  },
+  {
+    "ID": 4,
+    "NOME": "Portobello Park Hotel",
+    "CATEGORIA": "Porto Seguro",
+    "TIPO": "Midscale",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Muito bom",
+    "VALOR": 459.90
+  },
+  {
+    "ID": 5,
+    "NOME": "Hotel Coroa Vermelha Beach",
+    "CATEGORIA": "Porto Seguro",
+    "TIPO": "Resort",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Muito bom",
+    "VALOR": 699.90
+  },
+  {
+    "ID": 6,
+    "NOME": "NAUTICOMAR RESORT ALL INCLUSIVE & BEACH CLUB",
+    "CATEGORIA": "Porto Seguro",
+    "TIPO": "Midscale",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Excelente",
+    "VALOR": 849.90
+  },
+  {
+    "ID": 7,
+    "NOME": "Vila Gale Rio De Janeiro",
+    "CATEGORIA": "Rio de Janeiro",
+    "TIPO": "Midscale",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Muito bom",
+    "VALOR": 579.90
+  },
+  {
+    "ID": 8,
+    "NOME": "Quality Rio De Janeiro Barra Da Tijuca",
+    "CATEGORIA": "Rio de Janeiro",
+    "TIPO": "Midscale",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Muito bom",
+    "VALOR": 499.90
+  },
+  {
+    "ID": 9,
+    "NOME": "Wyndham Rio Barra",
+    "CATEGORIA": "Rio de Janeiro",
+    "TIPO": "Econômico",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Muito bom",
+    "VALOR": 459.90
+  },
+  {
+    "ID": 10,
+    "NOME": "Hotel Golden Park Rio De Janeiro Aeroporto By Nacional Inn",
+    "CATEGORIA": "Rio de Janeiro",
+    "TIPO": "Midscale",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Agradável",
+    "VALOR": 379.90
+  },
+  {
+    "ID": 11,
+    "NOME": "MERCURE RJ BARRA DA TIJUCA",
+    "CATEGORIA": "Rio de Janeiro",
+    "TIPO": "Midscale",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Muito bom",
+    "VALOR": 549.90
+  },
+  {
+    "ID": 12,
+    "NOME": "Transamerica Executive Nova Paulista",
+    "CATEGORIA": "São Paulo",
+    "TIPO": "Midscale",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Muito bom",
+    "VALOR": 429.90
+  },
+  {
+    "ID": 13,
+    "NOME": "Hotel Intercity Paulista",
+    "CATEGORIA": "São Paulo",
+    "TIPO": "Midscale",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Muito bom",
+    "VALOR": 449.90
+  },
+  {
+    "ID": 14,
+    "NOME": "Vila Gale Paulista",
+    "CATEGORIA": "São Paulo",
+    "TIPO": "Midscale",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Excelente",
+    "VALOR": 519.90
+  },
+  {
+    "ID": 15,
+    "NOME": "ESUITES CONGONHAS BY ATLANTICA",
+    "CATEGORIA": "São Paulo",
+    "TIPO": "Midscale",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Muito bom",
+    "VALOR": 399.90
+  },
+  {
+    "ID": 16,
+    "NOME": "Ibis São Paulo Barra Funda",
+    "CATEGORIA": "São Paulo",
+    "TIPO": "Midscale",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Agradável",
+    "VALOR": 349.90
+  },
+  {
+    "ID": 17,
+    "NOME": "HOTEL INTERCITY SALVADOR AEROPORTO",
+    "CATEGORIA": "Salvador",
+    "TIPO": "Midscale",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Muito bom",
+    "VALOR": 379.90
+  },
+  {
+    "ID": 18,
+    "NOME": "Vila Gale Salvador",
+    "CATEGORIA": "Salvador",
+    "TIPO": "Midscale",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Muito bom",
+    "VALOR": 459.90
+  },
+  {
+    "ID": 19,
+    "NOME": "Portobello Ondina Praia Hotel",
+    "CATEGORIA": "Salvador",
+    "TIPO": "Midscale",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Muito bom",
+    "VALOR": 429.90
+  },
+  {
+    "ID": 20,
+    "NOME": "Hotel Dan Inn Express Salvador By Nacional Inn",
+    "CATEGORIA": "Salvador",
+    "TIPO": "Econômico",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Agradável",
+    "VALOR": 299.90
+  },
+  {
+    "ID": 21,
+    "NOME": "B HOTEL",
+    "CATEGORIA": "Salvador",
+    "TIPO": "Pousada",
+    "DATA": "DATA",
+    "HOSPEDE": "HOSPEDE",
+    "AVALIACAO": "Muito bom",
+    "VALOR": 269.90
+  }
+]

@@ -1,0 +1,276 @@
+<div class="pagina-busca">
+
+  <section class="grid grid-1">
+    RDC
+  </section>
+
+  <section class="grid grid-2">
+    ICONES
+  </section>
+
+  <section class="grid grid-3">
+
+    <h3 class="titulo">Buscar hospedagens</h3>
+
+    <div class="busca-hoteis">
+
+      <!-- =========================
+           HOTEL
+           ========================= -->
+
+      <div class="campo-busca">
+
+        <div class="campo-conteudo">
+
+          <label>Para onde deseja ir?</label>
+
+          <input
+            type="text"
+            [(ngModel)]="textoBusca"
+            [placeholder]="destinoSelecionado ? 'Digite pelo menos 3 letras' : ''"
+            (focus)="destinoSelecionado = true"
+            (input)="buscarHotel()"
+            (blur)="destinoSelecionado = false"
+            autocomplete="off"
+          >
+
+          <div
+            class="lista-hoteis"
+            *ngIf="destinoSelecionado && hoteisFiltrados.length > 0"
+          >
+
+            <div
+              class="hotel-opcao"
+              *ngFor="let hotel of hoteisFiltrados"
+              (mousedown)="selecionarHotel(hotel)"
+            >
+              {{ hotel.NOME }}
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           DATA
+           ========================= -->
+
+      <div class="campo-busca calendario-campo">
+
+        <div class="campo-conteudo">
+
+          <label>Quando?</label>
+
+          <input
+            type="text"
+            [value]="dataEntrada ? textoDatas() : ''"
+            [placeholder]="dataSelecionada ? 'Selecione as datas...' : ''"
+            (click)="abrirCalendario()"
+            readonly
+          >
+
+        </div>
+
+
+        <!-- CALENDÁRIO -->
+
+        <div
+          class="calendario-container"
+          *ngIf="calendarioAberto"
+          (click)="$event.stopPropagation()"
+        >
+
+          <div class="calendarios">
+
+
+            <!-- =========================
+                 MÊS ATUAL
+                 ========================= -->
+
+            <div class="calendar">
+
+              <header>
+
+                <span>
+                  {{ nomeMes(mesAtual) }} · {{ mesAtual.getFullYear() }}
+                </span>
+
+              </header>
+
+
+              <div class="days-of-week">
+
+                <div>Dom</div>
+                <div>Seg</div>
+                <div>Ter</div>
+                <div>Qua</div>
+                <div>Qui</div>
+                <div>Sex</div>
+                <div>Sáb</div>
+
+              </div>
+
+
+              <div class="days">
+
+                <div
+                  class="day-container"
+                  *ngFor="let dia of diasMesAtual"
+                >
+
+                  <div
+                    class="day-container__item"
+                    [class.void-day]="dia.numero === null"
+                    [class.past-day]="dia.passado"
+                    [class.day-selected]="dia.data && dataSelecionadaInicio(dia.data)"
+                    [class.day-end]="dia.data && dataSelecionadaFim(dia.data)"
+                    [class.day-range]="dia.data && dataDentroDoPeriodo(dia.data)"
+                    (click)="dia.data && selecionarData(dia.data)"
+                  >
+
+                    <span *ngIf="dia.numero !== null">
+                      {{ dia.numero }}
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- =========================
+                 MÊS SEGUINTE
+                 ========================= -->
+
+            <div class="calendar">
+
+              <header>
+
+                <span>
+                  {{ nomeMes(mesSeguinte) }} · {{ mesSeguinte.getFullYear() }}
+                </span>
+
+                <button
+                  type="button"
+                  class="right"
+                  (click)="mesProximo()"
+                >
+                  ›
+                </button>
+
+              </header>
+
+
+              <div class="days-of-week">
+
+                <div>Dom</div>
+                <div>Seg</div>
+                <div>Ter</div>
+                <div>Qua</div>
+                <div>Qui</div>
+                <div>Sex</div>
+                <div>Sáb</div>
+
+              </div>
+
+
+              <div class="days">
+
+                <div
+                  class="day-container"
+                  *ngFor="let dia of diasMesSeguinte"
+                >
+
+                  <div
+                    class="day-container__item"
+                    [class.void-day]="dia.numero === null"
+                    [class.past-day]="dia.passado"
+                    [class.day-selected]="dia.data && dataSelecionadaInicio(dia.data)"
+                    [class.day-end]="dia.data && dataSelecionadaFim(dia.data)"
+                    [class.day-range]="dia.data && dataDentroDoPeriodo(dia.data)"
+                    (click)="dia.data && selecionarData(dia.data)"
+                  >
+
+                    <span *ngIf="dia.numero !== null">
+                      {{ dia.numero }}
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- RODAPÉ -->
+
+          <div class="calendario-footer">
+
+            <span>
+              <ng-container *ngIf="!dataEntrada">
+                Selecione a data de entrada
+              </ng-container>
+
+              <ng-container *ngIf="dataEntrada && !dataSaida">
+                Selecione a data de saída
+              </ng-container>
+
+              <ng-container *ngIf="dataEntrada && dataSaida">
+                {{ textoDatas() }}
+              </ng-container>
+            </span>
+
+            <button
+              type="button"
+              (click)="fecharCalendario()"
+              [disabled]="!dataEntrada || !dataSaida"
+            >
+              Continuar
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           HÓSPEDES
+           ========================= -->
+
+      <div class="campo-busca">
+
+        <div class="campo-conteudo">
+
+          <label>Hóspedes</label>
+
+          <input
+            type="text"
+            placeholder="2 adultos · 1 quarto"
+            readonly
+          >
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="grid grid-4">
+
+  </section>
+
+</div>
