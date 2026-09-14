@@ -1,11 +1,11 @@
 <div class="pagina-busca">
 
   <section class="grid grid-1">
-    RDC
+
   </section>
 
   <section class="grid grid-2">
-    ICONES
+
   </section>
 
   <section class="grid grid-3">
@@ -24,26 +24,13 @@
 
           <label>Para onde deseja ir?</label>
 
-          <input
-            type="text"
-            [(ngModel)]="textoBusca"
-            [placeholder]="destinoSelecionado ? 'Digite pelo menos 3 letras' : ''"
-            (focus)="destinoSelecionado = true"
-            (input)="buscarHotel()"
-            (blur)="destinoSelecionado = false"
-            autocomplete="off"
-          >
+          <input type="text" [(ngModel)]="textoBusca"
+            [placeholder]="destinoSelecionado ? 'Digite pelo menos 3 letras' : ''" (focus)="destinoSelecionado = true"
+            (input)="buscarHotel()" (blur)="destinoSelecionado = false" autocomplete="off">
 
-          <div
-            class="lista-hoteis"
-            *ngIf="destinoSelecionado && hoteisFiltrados.length > 0"
-          >
+          <div class="lista-hoteis" *ngIf="destinoSelecionado && hoteisFiltrados.length > 0">
 
-            <div
-              class="hotel-opcao"
-              *ngFor="let hotel of hoteisFiltrados"
-              (mousedown)="selecionarHotel(hotel)"
-            >
+            <div class="hotel-opcao" *ngFor="let hotel of hoteisFiltrados" (mousedown)="selecionarHotel(hotel)">
               {{ hotel.NOME }}
             </div>
 
@@ -60,30 +47,19 @@
 
       <div class="campo-busca calendario-campo">
 
-        <div
-          class="campo-conteudo"
-          (click)="abrirCalendario()"
-        >
+        <div class="campo-conteudo" (click)="abrirCalendario()">
 
           <label>Quando?</label>
 
-          <input
-            type="text"
-            [value]="dataEntrada ? textoDatas() : ''"
-            [placeholder]="dataSelecionada ? 'Selecione as datas...' : ''"
-            readonly
-          >
+          <input type="text" [value]="dataEntrada ? textoDatas() : ''"
+            [placeholder]="dataSelecionada ? 'Selecione as datas...' : ''" readonly>
 
         </div>
 
 
         <!-- CALENDÁRIO -->
 
-        <div
-          class="calendario-container"
-          *ngIf="calendarioAberto"
-          (click)="$event.stopPropagation()"
-        >
+        <div class="calendario-container" *ngIf="calendarioAberto" (click)="$event.stopPropagation()">
 
           <div class="calendarios">
 
@@ -111,20 +87,13 @@
 
               <div class="days">
 
-                <div
-                  class="day-container"
-                  *ngFor="let dia of diasMesAtual"
-                >
+                <div class="day-container" *ngFor="let dia of diasMesAtual">
 
-                  <div
-                    class="day-container__item"
-                    [class.void-day]="dia.numero === null"
-                    [class.past-day]="dia.passado"
+                  <div class="day-container__item" [class.void-day]="dia.numero === null" [class.past-day]="dia.passado"
                     [class.day-selected]="dia.data && dataSelecionadaInicio(dia.data)"
                     [class.day-end]="dia.data && dataSelecionadaFim(dia.data)"
                     [class.day-range]="dia.data && dataDentroDoPeriodo(dia.data)"
-                    (click)="dia.data && selecionarData(dia.data)"
-                  >
+                    (click)="dia.data && selecionarData(dia.data)">
 
                     <span *ngIf="dia.numero !== null">
                       {{ dia.numero }}
@@ -149,11 +118,7 @@
                   {{ nomeMes(mesSeguinte) }} · {{ mesSeguinte.getFullYear() }}
                 </span>
 
-                <button
-                  type="button"
-                  class="right"
-                  (click)="mesProximo()"
-                >
+                <button type="button" class="right" (click)="mesProximo()">
                   ›
                 </button>
 
@@ -171,20 +136,13 @@
 
               <div class="days">
 
-                <div
-                  class="day-container"
-                  *ngFor="let dia of diasMesSeguinte"
-                >
+                <div class="day-container" *ngFor="let dia of diasMesSeguinte">
 
-                  <div
-                    class="day-container__item"
-                    [class.void-day]="dia.numero === null"
-                    [class.past-day]="dia.passado"
+                  <div class="day-container__item" [class.void-day]="dia.numero === null" [class.past-day]="dia.passado"
                     [class.day-selected]="dia.data && dataSelecionadaInicio(dia.data)"
                     [class.day-end]="dia.data && dataSelecionadaFim(dia.data)"
                     [class.day-range]="dia.data && dataDentroDoPeriodo(dia.data)"
-                    (click)="dia.data && selecionarData(dia.data)"
-                  >
+                    (click)="dia.data && selecionarData(dia.data)">
 
                     <span *ngIf="dia.numero !== null">
                       {{ dia.numero }}
@@ -221,11 +179,7 @@
 
             </span>
 
-            <button
-              type="button"
-              (click)="fecharCalendario()"
-              [disabled]="!dataEntrada || !dataSaida"
-            >
+            <button type="button" (click)="fecharCalendario()" [disabled]="!dataEntrada || !dataSaida">
               Continuar
             </button>
 
@@ -242,29 +196,18 @@
 
       <div class="campo-busca hospedes-campo">
 
-        <div
-          class="campo-conteudo"
-          (click)="abrirHospedes()"
-        >
+        <div class="campo-conteudo" (click)="abrirHospedes()">
 
           <label>Hóspedes</label>
 
-          <input
-            type="text"
-            [value]="textoHospedes()"
-            readonly
-          >
+          <input type="text" [value]="textoHospedes()" readonly>
 
         </div>
 
 
         <!-- PAINEL DE HÓSPEDES -->
 
-        <div
-          class="hospedes-container"
-          *ngIf="hospedesAberto"
-          (click)="$event.stopPropagation()"
-        >
+        <div class="hospedes-container" *ngIf="hospedesAberto" (click)="$event.stopPropagation()">
 
           <div class="quarto">
 
@@ -290,11 +233,7 @@
 
               <div class="contador">
 
-                <button
-                  type="button"
-                  (click)="diminuirAdultos()"
-                  [disabled]="adultos <= minimoAdultos"
-                >
+                <button type="button" (click)="diminuirAdultos()" [disabled]="adultos <= minimoAdultos">
                   −
                 </button>
 
@@ -302,11 +241,7 @@
                   {{ adultos }}
                 </span>
 
-                <button
-                  type="button"
-                  (click)="aumentarAdultos()"
-                  [disabled]="adultos >= maximoAdultos"
-                >
+                <button type="button" (click)="aumentarAdultos()" [disabled]="adultos >= maximoAdultos">
                   +
                 </button>
 
@@ -332,11 +267,7 @@
 
               <div class="contador">
 
-                <button
-                  type="button"
-                  (click)="diminuirCriancas()"
-                  [disabled]="criancas <= minimoCriancas"
-                >
+                <button type="button" (click)="diminuirCriancas()" [disabled]="criancas <= minimoCriancas">
                   −
                 </button>
 
@@ -344,11 +275,7 @@
                   {{ criancas }}
                 </span>
 
-                <button
-                  type="button"
-                  (click)="aumentarCriancas()"
-                  [disabled]="criancas >= maximoCriancas"
-                >
+                <button type="button" (click)="aumentarCriancas()" [disabled]="criancas >= maximoCriancas">
                   +
                 </button>
 
@@ -361,10 +288,7 @@
 
             <div class="hospedes-footer">
 
-              <button
-                type="button"
-                (click)="fecharHospedes()"
-              >
+              <button type="button" (click)="fecharHospedes()">
                 Aplicar
               </button>
 
@@ -374,6 +298,9 @@
 
         </div>
 
+      </div>
+      <div class="botao-buscar">
+        <img src="imagens/procurar.png" alt="Buscar">
       </div>
 
     </div>

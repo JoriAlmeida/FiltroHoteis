@@ -63,13 +63,14 @@
    ========================= */
 
 .titulo {
-  margin: 0 0 15px 0;
+  margin: 0 0 20px 0;
 
   font-family: Inter, sans-serif;
 
   font-size: 24px;
   font-weight: 600;
   line-height: 30px;
+  margin-left: 60px;
 
   color: white;
 }
@@ -82,9 +83,8 @@
 .busca-hoteis {
   display: flex;
   align-items: center;
-
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
 
   margin: 0 auto;
 
@@ -102,7 +102,7 @@
   flex: 1;
   min-width: 0;
 
-  height: 60px;
+  height: 48px;
 
   display: flex;
   align-items: center;
@@ -576,4 +576,35 @@
 
 .hospedes-footer button:hover {
   background-color: #0435ae;
+}
+
+
+
+
+/* =========================
+   BOTÃO DE BUSCA
+   ========================= */
+
+.botao-buscar {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+
+  border-radius: 50%;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  cursor: pointer;
+}
+
+.botao-buscar img {
+  width: 24px;
+  height: 24px;
+
+  object-fit: contain;
 }
