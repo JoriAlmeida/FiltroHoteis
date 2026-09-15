@@ -1,0 +1,149 @@
+<div class="hospedes-wrapper">
+
+    <div class="campo-hospedes" (click)="abrir()">
+        <label>Hóspedes</label>
+        <input type="text" [value]="textoHospedes()" readonly>
+
+    </div>
+
+    <div class="hospedes-container" *ngIf="aberto" (click)="$event.stopPropagation()">
+
+        <div class="quarto" *ngFor="let quarto of quartos; let i = index">
+            <div class="quarto-header">
+                <h4>
+                    Quarto {{ i + 1 }}
+                </h4>
+                <button *ngIf="quartos.length > 1" type="button" class="remover-quarto" (click)="removerQuarto(i)">
+                    Remover
+                </button>
+
+            </div>
+
+
+            <!-- ADULTOS -->
+
+            <div class="hospede-linha">
+
+                <div class="hospede-descricao">
+
+                    <span>Adultos</span>
+
+                    <small>
+                        Acima de 18 anos
+                    </small>
+
+                </div>
+
+                <div class="contador">
+
+                    <button type="button" (click)="diminuirAdultos(quarto)"
+                        [disabled]="quarto.adultos <= minimoAdultos">
+                        −
+                    </button>
+
+                    <span>
+                        {{ quarto.adultos }}
+                    </span>
+
+                    <button type="button" (click)="aumentarAdultos(quarto)"
+                        [disabled]="quarto.adultos >= maximoAdultos">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CRIANÇAS -->
+
+            <div class="hospede-linha">
+
+                <div class="hospede-descricao">
+
+                    <span>Crianças</span>
+
+                    <small>
+                        Até 10 anos
+                    </small>
+
+                </div>
+
+                <div class="contador">
+
+                    <button type="button" (click)="diminuirCriancas(quarto)"
+                        [disabled]="quarto.idadesCriancas.length === 0">
+                        −
+                    </button>
+
+                    <span>
+                        {{ quarto.idadesCriancas.length }}
+                    </span>
+
+                    <button type="button" (click)="aumentarCriancas(quarto)"
+                        [disabled]="quarto.idadesCriancas.length >= maximoCriancas">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- IDADES -->
+
+            <div class="idades-criancas" *ngIf="quarto.idadesCriancas.length > 0">
+
+                <div class="idade-titulo">
+                    Quais são as idades das crianças?
+                </div>
+
+
+                <div class="idade-crianca" *ngFor="let idade of quarto.idadesCriancas; let j = index">
+
+                    <label>
+                        Criança {{ j + 1 }}
+                    </label>
+
+                    <select [ngModel]="idade" (ngModelChange)="alterarIdadeCrianca(quarto, j, $event)">
+
+                        <option *ngFor="let idadeOpcao of [0,1,2,3,4,5,6,7,8,9,10]" [ngValue]="idadeOpcao">
+                            {{
+                            idadeOpcao === 0
+                            ? 'Até 11 meses'
+                            : idadeOpcao === 1
+                            ? '1 ano'
+                            : idadeOpcao + ' anos'
+                            }}
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ADICIONAR QUARTO -->
+
+        <button *ngIf="quartos.length < maximoQuartos" type="button" class="adicionar-quarto"
+            (click)="adicionarQuarto()">
+            + Adicionar quarto
+        </button>
+
+
+        <!-- APLICAR -->
+
+        <div class="hospedes-footer">
+
+            <button type="button" (click)="fechar()">
+                Aplicar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

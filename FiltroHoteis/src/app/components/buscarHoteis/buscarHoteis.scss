@@ -1,0 +1,83 @@
+.busca-hoteis {
+  position: relative;
+
+  width: 100%;
+}
+
+
+.campo-conteudo {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.campo-conteudo label {
+  margin-bottom: 5px;
+
+  font-size: 12px;
+  color: #555;
+}
+
+
+.campo-conteudo input {
+  width: 100%;
+
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  font-size: 14px;
+  color: #333;
+}
+
+
+.campo-conteudo input::placeholder {
+  color: #777;
+}
+
+
+/* =========================
+   LISTA DE HOTÉIS
+   ========================= */
+
+.lista-hoteis {
+  position: absolute;
+
+  top: calc(100% + 5px);
+  left: 0;
+
+  width: 100%;
+
+  max-height: 250px;
+
+  overflow-y: auto;
+
+  background: white;
+
+  border-radius: 6px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+
+  z-index: 1000;
+}
+
+
+.hotel-opcao {
+  padding: 12px 15px;
+
+  font-size: 14px;
+
+  color: #333;
+
+  cursor: pointer;
+}
+
+
+.hotel-opcao:hover {
+  background-color: #f2f2f2;
+}

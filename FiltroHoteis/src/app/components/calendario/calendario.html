@@ -1,0 +1,174 @@
+<div class="calendario-wrapper">
+
+  <div
+    class="campo-calendario"
+    (click)="abrir()"
+  >
+
+    <label>Quando?</label>
+
+    <input
+      type="text"
+      [value]="dataEntrada ? textoDatas() : ''"
+      [placeholder]="aberto ? 'Selecione as datas...' : ''"
+      readonly
+    >
+
+  </div>
+
+
+  <div
+    class="calendario-container"
+    *ngIf="aberto"
+    (click)="$event.stopPropagation()"
+  >
+
+    <div class="calendarios">
+
+      <!-- MÊS ATUAL -->
+
+      <div class="calendar">
+
+        <header>
+
+          <span>
+            {{ nomeMes(mesAtual) }} · {{ mesAtual.getFullYear() }}
+          </span>
+
+        </header>
+
+        <div class="days-of-week">
+          <div>Dom</div>
+          <div>Seg</div>
+          <div>Ter</div>
+          <div>Qua</div>
+          <div>Qui</div>
+          <div>Sex</div>
+          <div>Sáb</div>
+        </div>
+
+        <div class="days">
+
+          <div
+            class="day-container"
+            *ngFor="let dia of diasMesAtual"
+          >
+
+            <div
+              class="day-container__item"
+              [class.void-day]="dia.numero === null"
+              [class.past-day]="dia.passado"
+              [class.day-selected]="dia.data && dataSelecionadaInicio(dia.data)"
+              [class.day-end]="dia.data && dataSelecionadaFim(dia.data)"
+              [class.day-range]="dia.data && dataDentroDoPeriodo(dia.data)"
+              (click)="dia.data && selecionarData(dia.data)"
+            >
+
+              <span *ngIf="dia.numero !== null">
+                {{ dia.numero }}
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- MÊS SEGUINTE -->
+
+      <div class="calendar">
+
+        <header>
+
+          <span>
+            {{ nomeMes(mesSeguinte) }} · {{ mesSeguinte.getFullYear() }}
+          </span>
+
+          <button
+            type="button"
+            class="right"
+            (click)="mesProximo()"
+          >
+            ›
+          </button>
+
+        </header>
+
+        <div class="days-of-week">
+          <div>Dom</div>
+          <div>Seg</div>
+          <div>Ter</div>
+          <div>Qua</div>
+          <div>Qui</div>
+          <div>Sex</div>
+          <div>Sáb</div>
+        </div>
+
+        <div class="days">
+
+          <div
+            class="day-container"
+            *ngFor="let dia of diasMesSeguinte"
+          >
+
+            <div
+              class="day-container__item"
+              [class.void-day]="dia.numero === null"
+              [class.past-day]="dia.passado"
+              [class.day-selected]="dia.data && dataSelecionadaInicio(dia.data)"
+              [class.day-end]="dia.data && dataSelecionadaFim(dia.data)"
+              [class.day-range]="dia.data && dataDentroDoPeriodo(dia.data)"
+              (click)="dia.data && selecionarData(dia.data)"
+            >
+
+              <span *ngIf="dia.numero !== null">
+                {{ dia.numero }}
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- RODAPÉ -->
+
+    <div class="calendario-footer">
+
+      <span>
+
+        <ng-container *ngIf="!dataEntrada">
+          Selecione a data de entrada
+        </ng-container>
+
+        <ng-container *ngIf="dataEntrada && !dataSaida">
+          Selecione a data de saída
+        </ng-container>
+
+        <ng-container *ngIf="dataEntrada && dataSaida">
+          {{ textoDatas() }}
+        </ng-container>
+
+      </span>
+
+      <button
+        type="button"
+        (click)="fechar()"
+        [disabled]="!dataEntrada || !dataSaida"
+      >
+        Continuar
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
