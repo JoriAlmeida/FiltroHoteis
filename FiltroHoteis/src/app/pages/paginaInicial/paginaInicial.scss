@@ -28,44 +28,37 @@
 
 
 .grid-2 {
-  background-color: #e5e5e5;
+  background-color: white;
 }
 
 
 .grid-3 {
-  background: linear-gradient(
-    90deg,
-    #0540d3,
-    #4673e4
-  );
+  background: linear-gradient(90deg,
+      #0540d3,
+      #4673e4);
 }
 
 
 .grid-4 {
-  background-color: #e5e5e5;
+  background-color: white;
 }
 
-
-/* =========================
-   TÍTULO
-   ========================= */
+// TITULO
 
 .titulo {
-  margin: 0 0 20px 60px;
-
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  transform: translateX(-50px);
   font-family: Inter, sans-serif;
-
   font-size: 24px;
   font-weight: 600;
   line-height: 30px;
-
   color: white;
 }
 
 
-/* =========================
-   ÁREA DE BUSCA
-   ========================= */
+// BUSCAR HOTEIS
 
 .busca-hoteis {
   display: flex;
@@ -77,12 +70,12 @@
   margin: 0 auto;
 
   gap: 12px;
+
+  transform: translateX(-50px);
 }
 
 
-/* =========================
-   CAMPOS
-   ========================= */
+// CAMPO DE BUSCA
 
 .campo-busca {
   position: relative;
@@ -105,9 +98,7 @@
 }
 
 
-/* =========================
-   BOTÃO DE BUSCA
-   ========================= */
+// BOTÃO DE BUSCA
 
 .botao-buscar {
   width: 50px;

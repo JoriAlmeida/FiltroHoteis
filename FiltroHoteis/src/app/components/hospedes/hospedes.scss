@@ -13,7 +13,7 @@
   width: 100%;
 
   display: flex;
-  flex-direction: column;
+  align-items: center;
 
   cursor: pointer;
 }
@@ -333,4 +333,13 @@
   font-weight: 600;
 
   cursor: pointer;
+}
+
+
+.icone-hospedes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 10px;
 }

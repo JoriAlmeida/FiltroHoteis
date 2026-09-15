@@ -1,46 +1,80 @@
+
 /* =========================
    CAMPO
    ========================= */
 
 .calendario-wrapper {
   position: relative;
-
   width: 100%;
 }
-
 
 .campo-calendario {
   width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
 
+.icone-calendario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.campo-conteudo {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
-
-  cursor: pointer;
+  justify-content: center;
 }
 
-
-.campo-calendario label {
+.campo-conteudo label {
   margin-bottom: 5px;
-
   font-size: 12px;
   color: #555;
+  transition: 0.2s;
+}
+
+.campo-conteudo input {
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.campo-conteudo input::placeholder {
+  color: #777;
 }
 
 
-.campo-calendario input {
+/* CAMPO FECHADO */
+
+.campo-calendario:not(.campo-aberto) .campo-conteudo label {
   width: 100%;
+  margin: 0;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
+  color: #272727;
+}
 
-  padding: 0;
 
-  border: none;
-  outline: none;
+/* CAMPO ABERTO */
 
-  background: transparent;
-
-  font-size: 14px;
-  color: #333;
-
-  cursor: pointer;
+.campo-calendario.campo-aberto .campo-conteudo label {
+  margin-bottom: 5px;
+  text-align: left;
+  font-size: 12px;
+  color: #555;
 }
 
 
@@ -50,63 +84,44 @@
 
 .calendario-container {
   position: absolute;
-
   top: calc(100% + 10px);
   left: 0;
-
   width: 640px;
-
   padding: 20px;
-
   background: white;
-
   border-radius: 8px;
-
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.20);
-
   z-index: 2000;
 }
 
-
 .calendarios {
   display: flex;
-
   gap: 30px;
 }
-
 
 .calendar {
   flex: 1;
   min-width: 0;
 }
 
-
 .calendar header {
   height: 40px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 600;
-
   color: #272727;
+  justify-content: center;
 }
-
 
 .calendar header button {
   width: 30px;
   height: 30px;
-
   border: none;
-
   background: transparent;
-
   font-size: 24px;
-
   cursor: pointer;
-
   color: #272727;
 }
 
@@ -117,19 +132,14 @@
 
 .days-of-week {
   display: grid;
-
   grid-template-columns: repeat(7, 1fr);
-
   margin-bottom: 8px;
 }
 
-
 .days-of-week div {
   text-align: center;
-
   font-size: 12px;
   font-weight: 600;
-
   color: #686868;
 }
 
@@ -140,77 +150,55 @@
 
 .days {
   display: grid;
-
   grid-template-columns: repeat(7, 1fr);
-
   row-gap: 4px;
 }
 
-
 .day-container {
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   height: 32px;
 }
-
 
 .day-container__item {
   width: 32px;
   height: 32px;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
-
   font-size: 13px;
-
   color: #272727;
-
   cursor: pointer;
 }
-
 
 .day-container__item:hover {
   background-color: #eeeeee;
 }
 
-
 .day-container__item.void-day {
   cursor: default;
 }
 
-
 .day-container__item.past-day {
   color: #c5c5c5;
-
   cursor: default;
 }
-
 
 .day-container__item.past-day:hover {
   background-color: transparent;
 }
 
-
 .day-container__item.day-selected,
 .day-container__item.day-end {
   background-color: #0540d3;
-
   color: white;
-
   font-weight: 600;
 }
 
-
 .day-container__item.day-range {
   background-color: #e5edff;
-
   border-radius: 0;
 }
 
@@ -221,44 +209,31 @@
 
 .calendario-footer {
   display: flex;
-
   align-items: center;
   justify-content: space-between;
-
   margin-top: 20px;
   padding-top: 15px;
-
   border-top: 1px solid #eeeeee;
 }
 
-
 .calendario-footer span {
   font-size: 13px;
-
   color: #686868;
 }
 
-
 .calendario-footer button {
   padding: 10px 20px;
-
   border: none;
-
   border-radius: 20px;
-
   background-color: #0540d3;
-
   color: white;
-
   font-size: 14px;
   font-weight: 600;
-
   cursor: pointer;
 }
 
-
 .calendario-footer button:disabled {
   background-color: #cccccc;
-
   cursor: not-allowed;
 }
+

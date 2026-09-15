@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DiaCalendario } from '../../interfaces/calendario';
+
 
 
 @Component({
@@ -10,6 +11,10 @@ import { DiaCalendario } from '../../interfaces/calendario';
   templateUrl: './calendario.html',
   styleUrl: './calendario.scss'
 })
+
+
+
+
 export class Calendario {
 
   aberto = false;
@@ -143,15 +148,11 @@ export class Calendario {
   }
 
   selecionarData(data: Date): void {
-
     if (this.dataEstaNoPassado(data)) {
       return;
     }
 
-    if (
-      !this.dataEntrada ||
-      this.dataSaida
-    ) {
+    if (!this.dataEntrada || (this.dataEntrada && this.dataSaida)) {
       this.dataEntrada = data;
       this.dataSaida = null;
       return;
@@ -159,11 +160,15 @@ export class Calendario {
 
     if (data < this.dataEntrada) {
       this.dataEntrada = data;
+      this.dataSaida = null;
       return;
     }
 
     this.dataSaida = data;
+
+    this.fechar();
   }
+
 
   dataSelecionadaInicio(data: Date): boolean {
 
@@ -249,5 +254,12 @@ export class Calendario {
 
   formatarData(data: Date): string {
     return data.toLocaleDateString('pt-BR');
+  }
+
+  @HostListener('document:click')
+  fecharAoClicarFora(): void {
+    if (this.aberto) {
+      this.fechar();
+    }
   }
 }
