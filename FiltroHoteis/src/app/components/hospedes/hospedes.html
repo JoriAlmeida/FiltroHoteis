@@ -19,10 +19,6 @@
                 <h4>
                     Quarto {{ i + 1 }}
                 </h4>
-                <button *ngIf="quartos.length > 1" type="button" class="remover-quarto" (click)="removerQuarto(i)">
-                    Remover
-                </button>
-
             </div>
 
 
@@ -67,10 +63,10 @@
 
                 <div class="hospede-descricao">
 
-                    <span>Crianças</span>
+                    <span>Menores</span>
 
                     <small>
-                        Até 10 anos
+                        Até 17 anos
                     </small>
 
                 </div>
@@ -104,9 +100,9 @@
                     <div class="idade-crianca"
                         *ngFor="let idade of quarto.idadesCriancas; let j = index; trackBy: trackByIdade"> <select
                             [ngModel]=" idade" (ngModelChange)="alterarIdadeCrianca(quarto, j, $event)">
-                        <option *ngFor="let idadeOpcao of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]"
-                            [ngValue]="idadeOpcao"> {{ idadeOpcao === 0 ? 'Até 11 meses' : idadeOpcao === 1 ? '1
-                            ano' : idadeOpcao + ' anos' }} </option>
+                            <option *ngFor="let idadeOpcao of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]"
+                                [ngValue]="idadeOpcao"> {{ idadeOpcao === 0 ? 'Até 11 meses' : idadeOpcao === 1 ? '1
+                                ano' : idadeOpcao + ' anos' }} </option>
                         </select>
                     </div>
                 </div>
@@ -115,22 +111,37 @@
 
             <!-- ADICIONAR QUARTO -->
 
-            <button *ngIf="quartos.length < maximoQuartos" type="button" class="adicionar-quarto"
-                (click)="adicionarQuarto()">
-                + Adicionar quarto
-            </button>
+            <div class="acoes-quarto" *ngIf="i === quartos.length - 1">
 
+                <button *ngIf="quartos.length > 1" type="button" class="apagar-quarto" (click)="removerQuarto(i)">
 
-            <!-- APLICAR -->
+                    Apagar Quarto
 
-            <div class="hospedes-footer">
+                </button>
 
-                <button type="button" (click)="fechar()">
-                    Aplicar
+                <button *ngIf="quartos.length < maximoQuartos" type="button" class="adicionar-quarto"
+                    (click)="adicionarQuarto()">
+
+                    + Adicionar Quarto
+
                 </button>
 
             </div>
 
         </div>
 
+        <!-- APLICAR -->
+
+        <div class="hospedes-footer">
+
+            <button type="button" (click)="fechar()">
+
+                Aplicar
+
+            </button>
+
+        </div>
+
     </div>
+
+</div>

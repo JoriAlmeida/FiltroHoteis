@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Quarto } from '../../interfaces/quarto';
@@ -11,7 +11,8 @@ import { Quarto } from '../../interfaces/quarto';
   templateUrl: './hospedes.html',
   styleUrl: './hospedes.scss'
 })
-export class Hospedes {
+
+export class Hospedes implements OnInit {
 
   aberto = false;
 
@@ -33,33 +34,36 @@ export class Hospedes {
   }
 
   fechar(): void {
-
-    this.hospedesSelecionados.emit(this.quartos);
-
+    this.emitirHospedes();
     this.aberto = false;
   }
+
 
   aumentarAdultos(quarto: Quarto): void {
     if (quarto.adultos < this.maximoAdultos) {
       quarto.adultos++;
+      this.emitirHospedes();
     }
   }
 
   diminuirAdultos(quarto: Quarto): void {
     if (quarto.adultos > this.minimoAdultos) {
       quarto.adultos--;
+      this.emitirHospedes();
     }
   }
 
   aumentarCriancas(quarto: Quarto): void {
     if (quarto.idadesCriancas.length < this.maximoCriancas) {
       quarto.idadesCriancas.push(0);
+      this.emitirHospedes();
     }
   }
 
   diminuirCriancas(quarto: Quarto): void {
     if (quarto.idadesCriancas.length > 0) {
       quarto.idadesCriancas.pop();
+      this.emitirHospedes();
     }
   }
 
@@ -69,12 +73,15 @@ export class Hospedes {
         adultos: 1,
         idadesCriancas: []
       });
+
+      this.emitirHospedes();
     }
   }
 
   removerQuarto(indice: number): void {
     if (this.quartos.length > 1) {
       this.quartos.splice(indice, 1);
+      this.emitirHospedes();
     }
   }
 
@@ -84,6 +91,7 @@ export class Hospedes {
     idade: number
   ): void {
     quarto.idadesCriancas[indice] = idade;
+    this.emitirHospedes();
   }
 
   textoHospedes(): string {
@@ -105,6 +113,16 @@ export class Hospedes {
 
     return `${totalAdultos} adultos · ${totalCriancas} crianças · ${quantidadeQuartos} quarto${quantidadeQuartos > 1 ? 's' : ''}`;
   }
+
+  private emitirHospedes(): void {
+    const quartosAtualizados: Quarto[] = this.quartos.map(quarto => ({
+      adultos: quarto.adultos,
+      idadesCriancas: [...quarto.idadesCriancas]
+    }));
+
+    this.hospedesSelecionados.emit(quartosAtualizados);
+  }
+
   trackByIdade(index: number): number {
     return index;
   }
@@ -116,5 +134,9 @@ export class Hospedes {
   }
 
   @Output() hospedesSelecionados = new EventEmitter<Quarto[]>();
+
+  ngOnInit(): void {
+    this.emitirHospedes();
+  }
 
 }

@@ -19,6 +19,8 @@
 }
 
 
+
+
 .campo-hospedes label {
   margin-bottom: 5px;
 
@@ -78,8 +80,9 @@
 .quarto {
   padding-bottom: 20px;
   margin-bottom: 20px;
-
   border-bottom: 1px solid #eeeeee;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 
@@ -108,17 +111,6 @@
 }
 
 
-.remover-quarto {
-  border: none;
-
-  background: transparent;
-
-  color: #d33;
-
-  font-size: 12px;
-
-  cursor: pointer;
-}
 
 
 /* =========================
@@ -267,30 +259,31 @@
    ADICIONAR QUARTO
    ========================= */
 
-.adicionar-quarto {
+.acoes-quarto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
+  margin-top: 15px;
+  padding-top: 10px;
+}
 
-  padding: 12px;
-
+.apagar-quarto,
+.adicionar-quarto {
   border: none;
-
   background: transparent;
-
-  color: #0540d3;
-
+  padding: 8px 0;
   font-size: 14px;
   font-weight: 600;
-
-  text-align: left;
-
   cursor: pointer;
+  color: #0540d3;
 }
 
-
+.apagar-quarto:hover,
 .adicionar-quarto:hover {
-  background-color: #f5f7ff;
+  color: #032fa0;
+  text-decoration: underline;
 }
-
 
 /* =========================
    RODAPÉ
@@ -298,12 +291,10 @@
 
 .hospedes-footer {
   display: flex;
-
-  justify-content: flex-end;
-
+  justify-content: center;
   margin-top: 15px;
+  padding-top: 15px;
 }
-
 
 .hospedes-footer button {
   padding: 10px 24px;

@@ -3,18 +3,13 @@
    ========================= */
 
 .menu-pesquisa {
-
-  height: fit-content;
-
-  padding: 24px;
-
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
   background: white;
 
-  border-radius: 8px;
-
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.12);
-
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 
@@ -68,8 +63,7 @@
   display: grid;
 
   grid-template-columns:
-    1fr
-    1fr;
+    1fr 1fr;
 
   gap: 12px;
 
@@ -141,3 +135,60 @@
 
 }
 
+
+
+/* ========================= CAMPOS ========================= */
+.campo-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.campo-menu label {
+  font-family: Inter, sans-serif !important;
+  font-size: 12px;
+  color: #666;
+}
+
+.valor-campo {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+  font-family: Inter, sans-serif !important;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ========================= DATAS ========================= */
+.datas-pesquisa {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* ========================= NOVA PESQUISA ========================= */
+.nova-pesquisa {
+  width: 100%;
+  margin-top: 4px;
+  padding: 11px 16px;
+  border: 1px solid #0540d3;
+  border-radius: 5px;
+  background: white;
+  color: #0540d3;
+  font-family: Inter, sans-serif !important;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nova-pesquisa:hover {
+  background-color: #f5f7ff;
+}

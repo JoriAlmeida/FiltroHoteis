@@ -3,9 +3,7 @@
   <!-- IMAGEM -->
   <div class="hotel-imagem">
 
-    <span>
-      Imagem do hotel
-    </span>
+    <img [src]="imagemHotel()" [alt]="hotel?.NOME">
 
   </div>
 
@@ -18,11 +16,16 @@
     </h2>
 
     <span class="hotel-categoria">
-      {{ hotel?.CATEGORIA }}
+      {{ hotel?.CATEGORIA }} - {{ hotel?.TIPO }}
     </span>
 
     <div class="hotel-avaliacao">
       {{ hotel?.AVALIACAO }}
+    </div>
+
+
+    <div class="hotel-cancelamento">
+      Verifique as Condições de Cancelamento
     </div>
 
   </div>
@@ -31,13 +34,31 @@
   <!-- VALOR -->
   <div class="hotel-valor">
 
-    <span class="valor-label">
-      A partir de
-    </span>
+    <div class="linha-valor">
+
+      <span class="quantidade-noites">
+        {{ quantidadeNoites() }} noites
+      </span>
+
+      <span class="valor-label">
+        a partir de
+      </span>
+
+    </div>
 
     <strong>
-      {{ hotel?.VALOR }}
+      R$ {{ valorTotal() | number:'1.2-2' }}
     </strong>
+
+    <small>
+      Podem existir taxas de turismo e/ou estacionamento
+    </small>
+
+    <button type="button" class="ver-hotel">
+
+      VER HOTEL
+
+    </button>
 
   </div>
 

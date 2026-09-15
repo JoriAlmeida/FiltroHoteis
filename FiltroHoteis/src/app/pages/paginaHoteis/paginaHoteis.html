@@ -10,12 +10,23 @@
 
   <section class="grid grid-3">
 
+    <div class="titulo-resultados">
+
+      <strong>1</strong> hotel encontrado para
+
+      <strong *ngIf="hotel">
+        {{ hotel.NOME }}, {{ hotel.CATEGORIA }}, Brasil
+      </strong>
+
+    </div>
+
     <div class="conteudo-hoteis">
 
       <app-menu-pesquisa [hotel]="hotel" [dataEntrada]="dataEntrada" [dataSaida]="dataSaida"
         [quartos]="quartos"></app-menu-pesquisa>
 
-      <app-card-hotel [hotel]="hotel"></app-card-hotel>
+      <app-card-hotel [hotel]="hotel" [dataEntrada]="dataEntrada" [dataSaida]="dataSaida">
+      </app-card-hotel>
 
     </div>
 

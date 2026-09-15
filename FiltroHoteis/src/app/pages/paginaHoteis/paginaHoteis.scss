@@ -10,10 +10,7 @@
 
   min-height: 100vh;
 
-  grid-template-rows:
-    9vh
-    33vh
-    58vh;
+  grid-template-rows: 9vh 13vh 78vh;
 
 }
 
@@ -40,18 +37,14 @@
 
 .grid-2 {
 
-  background-color: white;
+  background-color: blue;
 
 }
 
 
 .grid-3 {
 
-  background: linear-gradient(
-    90deg,
-    #0540d3,
-    #4673e4
-  );
+  background-color: white;
 
 }
 
@@ -73,10 +66,27 @@
   display: grid;
 
   grid-template-columns:
-    280px
-    1fr;
+    280px 1fr;
 
   gap: 20px;
 
 }
 
+
+.titulo-resultados {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  font-family: Inter, sans-serif;
+  font-size: 22px;
+  color: #272727;
+}
+
+.titulo-resultados strong {
+  font-weight: 600;
+  color: #0540d3;
+}
+
+.titulo-resultados span {
+  font-weight: 400;
+}
