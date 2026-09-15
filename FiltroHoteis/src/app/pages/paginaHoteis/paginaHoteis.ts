@@ -7,6 +7,7 @@ import { Hotel } from '../../interfaces/hotel';
 import { Quarto } from '../../interfaces/quarto';
 import { MenuPesquisa } from '../../components/meuPesquisa/menuPesquisa';
 import { CardHotel } from '../../components/cardHotel/cardHotel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pagina-hoteis',
@@ -31,10 +32,13 @@ export class PaginaHoteis implements OnInit {
   constructor(
     private buscaService: BuscaService,
     private hotelService: HotelService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private router: Router
   ) { }
 
-
+  voltarInicio(): void {
+    this.router.navigate(['/']);
+  }
 
 
   ngOnInit(): void {

@@ -36,15 +36,17 @@
 
 
 .grid-2 {
-
-  background-color: blue;
-
+  position: relative;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
 .grid-3 {
 
-  background-color: white;
+  background-color: #F5F5F5;
 
 }
 
@@ -89,4 +91,82 @@
 
 .titulo-resultados span {
   font-weight: 400;
+}
+
+
+
+.menu-produtos {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-item {
+  width: 100px;
+  height: 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  cursor: pointer;
+
+  border-radius: 4px;
+
+  transition: background-color 0.2s ease;
+}
+
+.menu-item:hover {
+  background-color: #0540d30a;
+}
+
+.menu-item img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.menu-item .label {
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #555;
+}
+
+
+.voltar-inicio {
+  position: absolute;
+  left: 30px;
+  bottom: 20px;
+
+  display: flex;
+  align-items: center;
+
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  color: #828282;
+
+  cursor: pointer;
+}
+
+.icone-voltar {
+  margin-right: 12px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.texto-voltar {
+  display: flex;
+  flex-direction: column;
+  line-height: 18px;
+}
+
+.texto-voltar strong {
+  color: gray;
+  font-weight: 600;
 }

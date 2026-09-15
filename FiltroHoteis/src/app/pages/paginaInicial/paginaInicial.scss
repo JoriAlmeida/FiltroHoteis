@@ -29,6 +29,54 @@
 
 .grid-2 {
   background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-produtos {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-item {
+  width: 100px;
+  height: 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  cursor: pointer;
+
+  border-radius: 4px;
+
+  transition: background-color 0.2s ease;
+}
+
+.menu-item img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.menu-item:hover {
+  border-radius: 4px;
+  background-color: #0540d30a;
+
+}
+
+.menu-item .label {
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #555;
 }
 
 
