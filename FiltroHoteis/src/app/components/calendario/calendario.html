@@ -1,7 +1,7 @@
 <div class="calendario-wrapper" (click)="$event.stopPropagation()">
 
 
-  <div class="campo-calendario" [class.campo-aberto]="aberto" (click)="abrir()">
+  <div class="campo-calendario" [class.campo-aberto]="aberto || dataEntrada" (click)="abrir()">
 
     <div class="icone-calendario">
 

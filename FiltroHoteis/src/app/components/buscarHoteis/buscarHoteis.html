@@ -12,7 +12,7 @@
 
   <div class="campo-conteudo">
 
-    <label for="campo-destino" [class.label-centralizada]="!destinoSelecionado">
+    <label for="campo-destino" [class.label-centralizada]="!destinoSelecionado && !textoBusca">
       Para onde deseja ir?
     </label>
 
@@ -22,12 +22,16 @@
 
     <div class="lista-hoteis" *ngIf="destinoSelecionado && hoteisFiltrados.length > 0">
 
+      <div class="lista-titulo"> Hotéis </div>
       <div class="hotel-opcao" *ngFor="let hotel of hoteisFiltrados" (mousedown)="selecionarHotel(hotel)">
-        {{ hotel.NOME }}
+        <div class="hotel-info">
+          <span class="hotel-nome">
+            {{ hotel.NOME }},
+          </span>
+          <span class="hotel-categoria"> {{
+            hotel.CATEGORIA }}
+          </span>
+        </div>
       </div>
 
     </div>
-
-  </div>
-
-</div>

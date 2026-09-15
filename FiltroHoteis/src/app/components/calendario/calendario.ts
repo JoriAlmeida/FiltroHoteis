@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DiaCalendario } from '../../interfaces/calendario';
 
@@ -166,6 +166,11 @@ export class Calendario {
 
     this.dataSaida = data;
 
+    this.datasSelecionadas.emit({
+      entrada: this.dataEntrada,
+      saida: this.dataSaida
+    });
+
     this.fechar();
   }
 
@@ -238,19 +243,33 @@ export class Calendario {
   textoDatas(): string {
 
     if (!this.dataEntrada) {
-      return 'Selecione as datas...';
+      return '';
     }
+
+    const entrada = this.dataEntrada.toLocaleDateString(
+      'pt-BR',
+      {
+        day: 'numeric',
+        month: 'long'
+      }
+    );
 
     if (!this.dataSaida) {
-      return this.formatarData(this.dataEntrada);
+      return entrada;
     }
 
-    return `${this.formatarData(
-      this.dataEntrada
-    )} - ${this.formatarData(
-      this.dataSaida
-    )}`;
+    const saida = this.dataSaida.toLocaleDateString(
+      'pt-BR',
+      {
+        day: 'numeric',
+        month: 'long'
+      }
+    );
+
+    return `${entrada} até ${saida}`;
   }
+
+
 
   formatarData(data: Date): string {
     return data.toLocaleDateString('pt-BR');
@@ -262,4 +281,9 @@ export class Calendario {
       this.fechar();
     }
   }
+
+  @Output() datasSelecionadas = new EventEmitter<{
+    entrada: Date;
+    saida: Date;
+  }>();
 }

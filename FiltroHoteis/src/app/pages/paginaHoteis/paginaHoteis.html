@@ -1,3 +1,24 @@
-<h1>Página de Hotéis</h1>
+<div class="pagina-hoteis">
 
-<a routerLink="/">Voltar para inicial</a>
+  <section class="grid grid-1">
+  </section>
+
+
+  <section class="grid grid-2">
+  </section>
+
+
+  <section class="grid grid-3">
+
+    <div class="conteudo-hoteis">
+
+      <app-menu-pesquisa [hotel]="hotel" [dataEntrada]="dataEntrada" [dataSaida]="dataSaida"
+        [quartos]="quartos"></app-menu-pesquisa>
+
+      <app-card-hotel [hotel]="hotel"></app-card-hotel>
+
+    </div>
+
+  </section>
+
+</div>

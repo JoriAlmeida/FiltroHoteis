@@ -1,0 +1,143 @@
+/* =========================
+   MENU DE PESQUISA
+   ========================= */
+
+.menu-pesquisa {
+
+  height: fit-content;
+
+  padding: 24px;
+
+  background: white;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* =========================
+   INFORMAÇÕES
+   ========================= */
+
+.informacao-pesquisa {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  margin-bottom: 20px;
+
+}
+
+
+.informacao-pesquisa label {
+
+  font-family: Inter, sans-serif !important;
+
+  font-size: 12px;
+
+  color: #555;
+
+}
+
+
+.informacao-pesquisa span {
+
+  font-family: Inter, sans-serif !important;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  color: #272727;
+
+}
+
+
+/* =========================
+   DATAS
+   ========================= */
+
+.datas-pesquisa {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+
+}
+
+
+.data-item {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+}
+
+
+.data-item label {
+
+  font-family: Inter, sans-serif !important;
+
+  font-size: 12px;
+
+  color: #555;
+
+}
+
+
+.data-item span {
+
+  font-family: Inter, sans-serif !important;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  color: #272727;
+
+}
+
+
+/* =========================
+   NOVA PESQUISA
+   ========================= */
+
+.nova-pesquisa {
+
+  width: 100%;
+
+  padding: 12px;
+
+  border: 1px solid #0540d3;
+
+  border-radius: 6px;
+
+  background: white;
+
+  color: #0540d3;
+
+  font-family: Inter, sans-serif !important;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+}
+

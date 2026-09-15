@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -19,11 +19,13 @@ export class BuscaHoteis implements OnInit {
   hoteis: Hotel[] = [];
   hoteisFiltrados: Hotel[] = [];
 
+  hotelSelecionadoId: number | null = null;
+
   textoBusca = '';
 
   constructor(
     private hotelService: HotelService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.carregarHoteis();
@@ -79,16 +81,18 @@ export class BuscaHoteis implements OnInit {
 
   }
 
-  selecionarHotel(
-    hotel: Hotel
-  ): void {
-
+  selecionarHotel(hotel: Hotel): void {
     this.textoBusca = hotel.NOME;
-
     this.hoteisFiltrados = [];
-
     this.destinoSelecionado = false;
 
+    this.hotelSelecionadoId = hotel.ID;
+    this.hotelSelecionado.emit(this.hotelSelecionadoId);
+
+    console.log('Hotel selecionado:', hotel);
+    
+    console.log('ID selecionado:', this.hotelSelecionadoId);
   }
 
+  @Output() hotelSelecionado = new EventEmitter<number>();
 }

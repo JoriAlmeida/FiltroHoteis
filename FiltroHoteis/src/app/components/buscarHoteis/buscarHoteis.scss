@@ -68,11 +68,11 @@
   position: absolute;
 
   top: calc(100% + 5px);
-  left: 0;
+  left: -40;
 
-  width: 100%;
+  width: 300px;
 
-  max-height: 250px;
+  max-height: 400px;
 
   overflow-y: auto;
 
@@ -87,18 +87,18 @@
 
 
 .hotel-opcao {
-  padding: 12px 15px;
-
-  font-size: 14px;
-
-  color: #333;
-
+  font-family: Inter, sans-serif !important;
+  min-height: 88px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
   cursor: pointer;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-
 .hotel-opcao:hover {
-  background-color: #f2f2f2;
+  background-color: #0540d314;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .icone-localizacao {
@@ -109,4 +109,12 @@
   flex-shrink: 0;
 
   margin-right: 10px;
+}
+
+.lista-titulo {
+  padding: 14px 24px 8px;
+  font-family: Inter, sans-serif !important;
+  font-size: 16px;
+  font-weight: 600;
+  color: #272727;
 }

@@ -1,0 +1,44 @@
+<div class="card-hotel">
+
+  <!-- IMAGEM -->
+  <div class="hotel-imagem">
+
+    <span>
+      Imagem do hotel
+    </span>
+
+  </div>
+
+
+  <!-- DADOS DO HOTEL -->
+  <div class="hotel-dados">
+
+    <h2>
+      {{ hotel?.NOME }}
+    </h2>
+
+    <span class="hotel-categoria">
+      {{ hotel?.CATEGORIA }}
+    </span>
+
+    <div class="hotel-avaliacao">
+      {{ hotel?.AVALIACAO }}
+    </div>
+
+  </div>
+
+
+  <!-- VALOR -->
+  <div class="hotel-valor">
+
+    <span class="valor-label">
+      A partir de
+    </span>
+
+    <strong>
+      {{ hotel?.VALOR }}
+    </strong>
+
+  </div>
+
+</div>

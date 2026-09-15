@@ -1,0 +1,82 @@
+/* =========================
+   PÁGINA
+   ========================= */
+
+.pagina-hoteis {
+
+  display: grid;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  grid-template-rows:
+    9vh
+    33vh
+    58vh;
+
+}
+
+
+/* =========================
+   GRIDS
+   ========================= */
+
+.grid {
+
+  width: 100%;
+
+  padding: 20px;
+
+}
+
+
+.grid-1 {
+
+  background-color: #f1f1f1;
+
+}
+
+
+.grid-2 {
+
+  background-color: white;
+
+}
+
+
+.grid-3 {
+
+  background: linear-gradient(
+    90deg,
+    #0540d3,
+    #4673e4
+  );
+
+}
+
+
+/* =========================
+   CONTEÚDO
+   ========================= */
+
+.conteudo-hoteis {
+
+  width: 100%;
+
+  max-width: 1200px;
+
+  height: 100%;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    280px
+    1fr;
+
+  gap: 20px;
+
+}
+

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Quarto } from '../../interfaces/quarto';
+
 
 @Component({
   selector: 'app-hospedes',
@@ -32,6 +33,9 @@ export class Hospedes {
   }
 
   fechar(): void {
+
+    this.hospedesSelecionados.emit(this.quartos);
+
     this.aberto = false;
   }
 
@@ -101,4 +105,16 @@ export class Hospedes {
 
     return `${totalAdultos} adultos · ${totalCriancas} crianças · ${quantidadeQuartos} quarto${quantidadeQuartos > 1 ? 's' : ''}`;
   }
+  trackByIdade(index: number): number {
+    return index;
+  }
+  @HostListener('document:click')
+  fecharAoClicarFora(): void {
+    if (this.aberto) {
+      this.fechar();
+    }
+  }
+
+  @Output() hospedesSelecionados = new EventEmitter<Quarto[]>();
+
 }

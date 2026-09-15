@@ -1,4 +1,5 @@
-<div class="hospedes-wrapper">
+<div class="hospedes-wrapper" (click)="$event.stopPropagation()">
+
     <div class="campo-hospedes" (click)="abrir()">
         <div class="icone-hospedes"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
                 width="24px" fill="#5f6368">
@@ -98,57 +99,38 @@
             <!-- IDADES -->
 
             <div class="idades-criancas" *ngIf="quarto.idadesCriancas.length > 0">
-
-                <div class="idade-titulo">
-                    Quais são as idades das crianças?
+                <div class="idade-titulo"> Quais são as idades das crianças? </div>
+                <div class="idades-grid">
+                    <div class="idade-crianca"
+                        *ngFor="let idade of quarto.idadesCriancas; let j = index; trackBy: trackByIdade"> <select
+                            [ngModel]=" idade" (ngModelChange)="alterarIdadeCrianca(quarto, j, $event)">
+                        <option *ngFor="let idadeOpcao of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]"
+                            [ngValue]="idadeOpcao"> {{ idadeOpcao === 0 ? 'Até 11 meses' : idadeOpcao === 1 ? '1
+                            ano' : idadeOpcao + ' anos' }} </option>
+                        </select>
+                    </div>
                 </div>
+            </div>
 
 
-                <div class="idade-crianca" *ngFor="let idade of quarto.idadesCriancas; let j = index">
+            <!-- ADICIONAR QUARTO -->
 
-                    <label>
-                        Criança {{ j + 1 }}
-                    </label>
+            <button *ngIf="quartos.length < maximoQuartos" type="button" class="adicionar-quarto"
+                (click)="adicionarQuarto()">
+                + Adicionar quarto
+            </button>
 
-                    <select [ngModel]="idade" (ngModelChange)="alterarIdadeCrianca(quarto, j, $event)">
 
-                        <option *ngFor="let idadeOpcao of [0,1,2,3,4,5,6,7,8,9,10]" [ngValue]="idadeOpcao">
-                            {{
-                            idadeOpcao === 0
-                            ? 'Até 11 meses'
-                            : idadeOpcao === 1
-                            ? '1 ano'
-                            : idadeOpcao + ' anos'
-                            }}
-                        </option>
+            <!-- APLICAR -->
 
-                    </select>
+            <div class="hospedes-footer">
 
-                </div>
+                <button type="button" (click)="fechar()">
+                    Aplicar
+                </button>
 
             </div>
 
         </div>
 
-
-        <!-- ADICIONAR QUARTO -->
-
-        <button *ngIf="quartos.length < maximoQuartos" type="button" class="adicionar-quarto"
-            (click)="adicionarQuarto()">
-            + Adicionar quarto
-        </button>
-
-
-        <!-- APLICAR -->
-
-        <div class="hospedes-footer">
-
-            <button type="button" (click)="fechar()">
-                Aplicar
-            </button>
-
-        </div>
-
     </div>
-
-</div>

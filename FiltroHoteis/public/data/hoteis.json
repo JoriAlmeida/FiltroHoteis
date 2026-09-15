@@ -2,7 +2,7 @@
   {
     "ID": 1,
     "NOME": "VILLAGE ARRAIAL BY MN HOTÉIS",
-    "CATEGORIA": "Porto Seguro",
+    "CATEGORIA": "Porto Seguro - BA",
     "TIPO": "Econômico",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -12,7 +12,7 @@
   {
     "ID": 2,
     "NOME": "POUSADA RECANTO TRANCOSO",
-    "CATEGORIA": "Porto Seguro",
+    "CATEGORIA": "Porto Seguro - BA",
     "TIPO": "Econômico",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -22,7 +22,7 @@
   {
     "ID": 3,
     "NOME": "Porto Seguro Praia Resort All Inclusive",
-    "CATEGORIA": "Porto Seguro",
+    "CATEGORIA": "Porto Seguro - BA",
     "TIPO": "Resort",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -32,7 +32,7 @@
   {
     "ID": 4,
     "NOME": "Portobello Park Hotel",
-    "CATEGORIA": "Porto Seguro",
+    "CATEGORIA": "Porto Seguro - BA",
     "TIPO": "Midscale",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -42,7 +42,7 @@
   {
     "ID": 5,
     "NOME": "Hotel Coroa Vermelha Beach",
-    "CATEGORIA": "Porto Seguro",
+    "CATEGORIA": "Porto Seguro - BA",
     "TIPO": "Resort",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -52,7 +52,7 @@
   {
     "ID": 6,
     "NOME": "NAUTICOMAR RESORT ALL INCLUSIVE & BEACH CLUB",
-    "CATEGORIA": "Porto Seguro",
+    "CATEGORIA": "Porto Seguro - BA",
     "TIPO": "Midscale",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -62,7 +62,7 @@
   {
     "ID": 7,
     "NOME": "Vila Gale Rio De Janeiro",
-    "CATEGORIA": "Rio de Janeiro",
+    "CATEGORIA": "Rio de Janeiro - RJ",
     "TIPO": "Midscale",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -72,7 +72,7 @@
   {
     "ID": 8,
     "NOME": "Quality Rio De Janeiro Barra Da Tijuca",
-    "CATEGORIA": "Rio de Janeiro",
+    "CATEGORIA": "Rio de Janeiro - RJ",
     "TIPO": "Midscale",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -82,7 +82,7 @@
   {
     "ID": 9,
     "NOME": "Wyndham Rio Barra",
-    "CATEGORIA": "Rio de Janeiro",
+    "CATEGORIA": "Rio de Janeiro - RJ",
     "TIPO": "Econômico",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -92,7 +92,7 @@
   {
     "ID": 10,
     "NOME": "Hotel Golden Park Rio De Janeiro Aeroporto By Nacional Inn",
-    "CATEGORIA": "Rio de Janeiro",
+    "CATEGORIA": "Rio de Janeiro - RJ",
     "TIPO": "Midscale",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -102,7 +102,7 @@
   {
     "ID": 11,
     "NOME": "MERCURE RJ BARRA DA TIJUCA",
-    "CATEGORIA": "Rio de Janeiro",
+    "CATEGORIA": "Rio de Janeiro - RJ",
     "TIPO": "Midscale",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -112,7 +112,7 @@
   {
     "ID": 12,
     "NOME": "Transamerica Executive Nova Paulista",
-    "CATEGORIA": "São Paulo",
+    "CATEGORIA": "São Paulo - SP",
     "TIPO": "Midscale",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -122,7 +122,7 @@
   {
     "ID": 13,
     "NOME": "Hotel Intercity Paulista",
-    "CATEGORIA": "São Paulo",
+    "CATEGORIA": "São Paulo - SP",
     "TIPO": "Midscale",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -132,7 +132,7 @@
   {
     "ID": 14,
     "NOME": "Vila Gale Paulista",
-    "CATEGORIA": "São Paulo",
+    "CATEGORIA": "São Paulo - SP",
     "TIPO": "Midscale",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -142,7 +142,7 @@
   {
     "ID": 15,
     "NOME": "ESUITES CONGONHAS BY ATLANTICA",
-    "CATEGORIA": "São Paulo",
+    "CATEGORIA": "São Paulo - SP",
     "TIPO": "Midscale",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -152,7 +152,7 @@
   {
     "ID": 16,
     "NOME": "Ibis São Paulo Barra Funda",
-    "CATEGORIA": "São Paulo",
+    "CATEGORIA": "São Paulo - SP",
     "TIPO": "Midscale",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -162,7 +162,7 @@
   {
     "ID": 17,
     "NOME": "HOTEL INTERCITY SALVADOR AEROPORTO",
-    "CATEGORIA": "Salvador",
+    "CATEGORIA": "Salvador - BA",
     "TIPO": "Midscale",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -172,7 +172,7 @@
   {
     "ID": 18,
     "NOME": "Vila Gale Salvador",
-    "CATEGORIA": "Salvador",
+    "CATEGORIA": "Salvador - BA",
     "TIPO": "Midscale",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -182,7 +182,7 @@
   {
     "ID": 19,
     "NOME": "Portobello Ondina Praia Hotel",
-    "CATEGORIA": "Salvador",
+    "CATEGORIA": "Salvador - BA",
     "TIPO": "Midscale",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -192,7 +192,7 @@
   {
     "ID": 20,
     "NOME": "Hotel Dan Inn Express Salvador By Nacional Inn",
-    "CATEGORIA": "Salvador",
+    "CATEGORIA": "Salvador - BA",
     "TIPO": "Econômico",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",
@@ -202,7 +202,7 @@
   {
     "ID": 21,
     "NOME": "B HOTEL",
-    "CATEGORIA": "Salvador",
+    "CATEGORIA": "Salvador - BA",
     "TIPO": "Pousada",
     "DATA": "DATA",
     "HOSPEDE": "HOSPEDE",

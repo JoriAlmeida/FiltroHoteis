@@ -16,25 +16,22 @@
 
       <!-- Busca de hotéis -->
       <div class="campo-busca">
-        <app-buscar-hoteis></app-buscar-hoteis>
+        <app-buscar-hoteis (hotelSelecionado)="receberHotel($event)"></app-buscar-hoteis>
       </div>
 
       <!-- Busca de datas -->
       <div class="campo-busca">
-        <app-calendario></app-calendario>
+        <app-calendario (datasSelecionadas)="receberDatas($event)"></app-calendario>
       </div>
 
       <!-- Busca de hóspedes -->
       <div class="campo-busca">
-        <app-hospedes></app-hospedes>
+        <app-hospedes (hospedesSelecionados)="receberHospedes($event)"></app-hospedes>
       </div>
 
       <!-- Botão buscar -->
-      <div class="botao-buscar">
-        <img
-          src="imagens/procurar.png"
-          alt="Buscar"
-        >
+      <div class="botao-buscar" (click)="buscar()">
+        <img src="imagens/procurar.png" alt="Buscar">
       </div>
 
     </div>

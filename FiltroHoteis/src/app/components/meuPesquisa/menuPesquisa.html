@@ -1,0 +1,58 @@
+<div class="menu-pesquisa">
+
+  <div class="informacao-pesquisa">
+
+    <label>Hotel</label>
+
+    <span>
+      {{ hotel?.NOME }}
+    </span>
+
+  </div>
+
+
+  <div class="datas-pesquisa">
+
+    <div class="data-item">
+
+      <label>Data inicial</label>
+
+      <span>
+        {{ dataEntrada }}
+      </span>
+
+    </div>
+
+
+    <div class="data-item">
+
+      <label>Data final</label>
+
+      <span>
+        {{ dataSaida }}
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <div class="informacao-pesquisa">
+
+    <label>Hóspedes</label>
+
+    <span>
+      {{ quartos.length }} quarto(s)
+    </span>
+
+  </div>
+
+
+  <button
+    type="button"
+    class="nova-pesquisa"
+  >
+    Nova pesquisa
+  </button>
+
+</div>
